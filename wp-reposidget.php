@@ -3,7 +3,7 @@
 Plugin Name: WP Reposidget (GitHub 项目挂件)
 Plugin URI: http://forcefront.com/reposidget-plugin/
 Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
-Version: 1.0.0
+Version: 1.0.1
 Author: Leo Deng (@米粽粽)
 Author URI: http://forcefront.com/
 License: GPLv2 or later
@@ -11,19 +11,21 @@ License: GPLv2 or later
 
 
 function multi_lingua() {
-    load_plugin_textdomain('repo', false, dirname(plugin_basename(__FILE__)) . '/lang/');
+    load_plugin_textdomain('repo', false, dirname(plugin_basename(__FILE__)) . '/langs/');
 }
 
 function quicktags() { ?>
     <script type="text/javascript">
-        function repoPath(e, c, ed) {
-            var path = prompt('<?php _e("Path to the repo you want to insert:", "repo"); ?>');
-            if(!!path) {
-                this.tagStart = '[repo path="' + path + '"]';
-                QTags.TagButton.prototype.callback.call(this, e, c, ed);
+        void function() {
+            function repoPath(e, c, ed) {
+                var path = prompt('<?php _e("Path to the repo you want to insert:", "repo"); ?>');
+                if(!!path) {
+                    this.tagStart = '[repo path="' + path + '"]';
+                    QTags.TagButton.prototype.callback.call(this, e, c, ed);
+                }
             }
-        }
-        QTags.addButton('repo', 'GitHub Repo', repoPath);
+            QTags.addButton('repo', '<?php _e("GitHub Repo", "repo"); ?>', repoPath);
+        }();
     </script><?php
 }
 
@@ -59,9 +61,20 @@ function reposidget($atts) {
     return $html;
 }
 
+function reposidget_button($buttons) {
+    array_push($buttons, "|", "reposidget");
+    return $buttons;
+}
+function reposidget_script($plugin_array) {
+    $plugin_array['reposidget'] = plugins_url('wp-reposidget.js', __FILE__);
+    return $plugin_array;
+}
+
 add_action('admin_print_footer_scripts', 'quicktags');
 add_action('plugins_loaded', 'multi_lingua');
 add_action('wp_head', 'add_reposidget_stylesheet');
+add_filter('mce_buttons', 'reposidget_button');
+add_filter('mce_external_plugins', 'reposidget_script');
 add_shortcode('repo', 'reposidget');
 
 ?>

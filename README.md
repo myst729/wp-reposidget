@@ -6,7 +6,7 @@ Plugin URI: http://forcefront.com/reposidget-plugin/
 Tags: github, reposidget  
 Requires at least: 2.7.0  
 Tested up to: 3.5.1  
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Author URI: http://forcefront.com/  
 Donate link: http://me.alipay.com/myst  
 License: GPLv2 or later
@@ -53,11 +53,17 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 ###Changelog###
 
+= 1.0.1 (2013-05-23) =
+* 支持可视化编辑器。支持多语言。
+
 = 1.0.0 (2013-05-22) =
-* 发布第一个版本
+* 发布第一个版本。
 
 
 ###Upgrade Notice###
+
+= 1.0.1 =  
+支持可视化编辑器。支持多语言。
 
 = 1.0.0 =  
 向 WordPress 文章/页面中插入 GitHub 项目挂件。
