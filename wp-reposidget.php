@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Reposidget (GitHub 项目挂件)
 Plugin URI: http://forcefront.com/reposidget-plugin/
-Description: WordPress Reposidget plugin - insert GitHub repository widget on you site. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
+Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
 Version: 1.0.0
 Author: Leo Deng (@米粽粽)
 Author URI: http://forcefront.com/

@@ -11,7 +11,7 @@ Author URI: http://forcefront.com/
 Donate link: http://me.alipay.com/myst  
 License: GPLv2 or later
 
-WordPress Reposidget plugin - insert GitHub repository widget into you posts/pages.
+Insert GitHub repository widget into you posts/pages.
 
 
 ###Description###
