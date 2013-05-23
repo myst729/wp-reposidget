@@ -65,11 +65,11 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 ###Upgrade Notice###
 
-= 1.0.2 =
+= 1.0.2 =  
 格式化数字。
 
-= 1.0.1 =
+= 1.0.1 =  
 支持可视化编辑器。支持多语言。
 
-= 1.0.0 =
+= 1.0.0 =  
 向 WordPress 文章/页面中插入 GitHub 项目挂件。
