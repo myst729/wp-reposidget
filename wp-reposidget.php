@@ -3,7 +3,7 @@
 Plugin Name: WP Reposidget (GitHub 项目挂件)
 Plugin URI: http://forcefront.com/reposidget-plugin/
 Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
-Version: 1.0.1
+Version: 1.0.2
 Author: Leo Deng (@米粽粽)
 Author URI: http://forcefront.com/
 License: GPLv2 or later
@@ -57,7 +57,7 @@ function reposidget($atts) {
     } else {
         $repoContent = '<p class="none">No description or homepage.</p>';
     }
-    $html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . $repo["watchers_count"] . '</span><span class="fork">' . $repo["forks_count"] . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["master_branch"] . '.zip">Download as zip</a></div></div>';
+    $html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["master_branch"] . '.zip">Download as zip</a></div></div>';
     return $html;
 }
 

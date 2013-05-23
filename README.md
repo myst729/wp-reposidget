@@ -6,7 +6,7 @@ Plugin URI: http://forcefront.com/reposidget-plugin/
 Tags: github, reposidget  
 Requires at least: 2.7.0  
 Tested up to: 3.5.1  
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Author URI: http://forcefront.com/  
 Donate link: http://me.alipay.com/myst  
 License: GPLv2 or later
@@ -53,6 +53,9 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 ###Changelog###
 
+= 1.0.2 (2013-05-23) =
+* 格式化数字。
+
 = 1.0.1 (2013-05-23) =
 * 支持可视化编辑器。支持多语言。
 
@@ -61,6 +64,9 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 
 ###Upgrade Notice###
+
+= 1.0.2 =  
+格式化数字。
 
 = 1.0.1 =  
 支持可视化编辑器。支持多语言。
