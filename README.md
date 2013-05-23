@@ -64,18 +64,3 @@ If you like this plugin and want to thank its developer, you may consider make a
 = 1.0.0 (2013-05-22) =
 * First drop.
 * 发布第一个版本。
-
-
-###Upgrade Notice###
-
-= 1.0.2 =  
-Format numbers.  
-格式化数字。
-
-= 1.0.1 =  
-Add support to rich editor. Add support to language translation.  
-支持可视化编辑器。支持多语言。
-
-= 1.0.0 =  
-Insert GitHub repository widget into you posts/pages.  
-向 WordPress 文章/页面中插入 GitHub 项目挂件。
