@@ -2,7 +2,7 @@ WP Reposidget (GitHub 项目挂件)
 =============================
 
 Contributors: Leo Deng ([@米粽粽](http://weibo.com/myst729))  
-Plugin URI: http://forcefront.com/reposidget-plugin/  
+Plugin URI: http://forcefront.com/wp-reposidget-plugin/  
 Tags: github, reposidget  
 Requires at least: 2.7.0  
 Tested up to: 3.5.1  
