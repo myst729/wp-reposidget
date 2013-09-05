@@ -42,7 +42,8 @@ Looking forward to your questions.
 
 If you like this plugin and want to thank its developer, you may consider make a donation via [**AliPay**](https://me.alipay.com/myst).
 
-如果您觉得这个插件还不错，想对开发者表示感谢，可以考虑通过 [**支付宝个人收款页**](https://me.alipay.com/myst) 打赏开发者一点儿银子。
+如果您觉得这个插件还不错，想对开发者表示感谢，可以考虑通过 [**支付宝个人收款页**](https://me.alipay.com/myst) 打赏开发者一点儿银子。  
+[![I want a Macbook Pro!](https://img.alipay.com/sys/personalprod/style/mc/btn-index.png)](https://me.alipay.com/myst)
 
 
 ###Screenshots###
