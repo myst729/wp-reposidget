@@ -57,7 +57,7 @@ function reposidget($atts) {
     } else {
         $repoContent = '<p class="none">No description or homepage.</p>';
     }
-    $html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["master_branch"] . '.zip">Download as zip</a></div></div>';
+    $html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["master_branch"] . 'master.zip">Download as zip</a></div></div>';
     return $html;
 }
 
