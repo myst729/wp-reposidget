@@ -5,8 +5,8 @@ Contributors: Leo Deng ([@米粽粽](http://weibo.com/myst729))
 Plugin URI: http://forcefront.com/wp-reposidget-plugin/  
 Tags: github, reposidget  
 Requires at least: 2.7.0  
-Tested up to: 3.5.1  
-Stable tag: 1.0.2  
+Tested up to: 3.9.1  
+Stable tag: 1.0.3  
 Author URI: http://forcefront.com/  
 Donate link: http://me.alipay.com/myst  
 License: GPLv2 or later
@@ -53,6 +53,10 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 
 ###Changelog###
+
+= 1.0.3 (2014-05-10) =
+* Be compatible with GitHub API change.
+* 修复 GitHub API 变更。
 
 = 1.0.2 (2013-05-23) =
 * Format numbers.
