@@ -18,16 +18,30 @@ function multi_lingua() {
 
 function quicktags() {
     ?>
-    <script type="text/javascript">
+   <script type="text/javascript">
     void function() {
         function repoPath(e, c, ed) {
-            var path = prompt('<?php _e("Path to the repo you want to insert:", "repo"); ?>');
-            if (!!path) {
-                this.tagStart = '[repo path="' + path + '"]';
+		
+            var repovalidator = prompt('<?php _e("Enter the path to the repository you want to insert. (in format: repo:username/repository_name/branch where repo can be either github or bitbucket and branch can be default for github only):", "repo"); ?>');
+            var repohostpatt = /(github|bitbucket)/i;
+			var pathpatt = /\:\w+\/\w+\//g;
+			var branchpatt = /\/\w+$/g;
+			
+			var repohost = repohostpatt.exec(repovalidator);
+			console.log(repohost[0]);
+			var path = pathpatt.exec(repovalidator);
+			path[0] = path[0].slice(1,path[0].length - 1);
+			console.log(path[0]);
+			var branch = branchpatt.exec(repovalidator);
+			branch[0] = branch[0].slice(1,branch[0].length);
+		    console.log(branch[0]);
+			
+			if (!!path[0]) {
+                this.tagStart = '[repo path="' + path[0] + '" ' + 'repohost="' + repohost[0] + '" ' + 'branch="' + branch[0] + '"]';
                 QTags.TagButton.prototype.callback.call(this, e, c, ed);
             }
         }
-        QTags.addButton('repo', '<?php _e("GitHub Repo", "repo"); ?>', repoPath);
+        QTags.addButton('repo', '<?php _e("GitHub/Bitbucket Repo", "repo"); ?>', repoPath);
     }();
     </script><?php
 }
@@ -67,7 +81,9 @@ function reposidget($atts) {
 
     if ($branch == "") {
         $branch = "master";
-    }
+    } else if ($branch == "default"){
+	    $branch = "default";
+	}
 
     if ($repohost == "github") {
         $repo = get_repo_github($path);
@@ -80,10 +96,17 @@ function reposidget($atts) {
         } else {
             $repoContent = '<p class="none">No description or homepage.</p>';
         }
-        $html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["default_branch"] . '.zip">Download as zip</a></div></div>';
-        return $html;
+		
+		if ($branch == "default"){
+			$html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $repo["default_branch"] . '.zip">Download as zip</a></div></div>';
+		} else {
+			$html = '<div class="reposidget"><div class="reposidget-header"><h2><a href="https://github.com/' . $repo["owner"]["login"] . '">' . $repo["owner"]["login"] . '</a>&nbsp;/&nbsp;<strong><a href="' . $repo["html_url"] . '">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content">' . $repoContent . '</div><div class="reposidget-footer"><span class="social"><span class="star">' . number_format($repo["watchers_count"]) . '</span><span class="fork">' . number_format($repo["forks_count"]) . '</span></span><a href="' . $repo["html_url"] . '/archive/' . $branch . '.zip">Download as zip</a></div></div>';
+        }
+		
+		return $html;
     } else if ($repohost == "bitbucket") {
         $repo = get_repo_bitbucket($path);
+		
         if ($repo["description"] != "") {
             $repoContent = '<p>' . $repo["description"] . '</p>';
         } else if ($repo["homepage"] != null) {
@@ -91,11 +114,13 @@ function reposidget($atts) {
         } else {
             $repoContent = '<p class="none">No description or homepage.</p>';
         }
+		
         $html = '<div class="reposidget"><div class="reposidget-header-bitbucket"><h2 style="background-repeat: no-repeat;border-radius: 50%;width: 30px;height: 34px;overflow: visible !important;
                 background: url('.$repo["links"]["avatar"]["href"].');
                 background-size: cover;"><a style="color:#FFFFFF;margin-left: 5px;" href="https://bitbucket.org/' . $repo["owner"]["username"] . '">' . $repo["owner"]["username"] . '</a>&nbsp;/&nbsp;<strong><a style="color:#FFFFFF;" href="https://bitbucket.org/' . $repo["owner"]["username"] . '/' . strtolower($repo["name"]).'">' . $repo["name"] .  '</a></strong></h2></div><div class="reposidget-content-bitbucket">' . $repoContent . '</div><div class="reposidget-footer-bitbucket"><span class="social" style="background: url(https://d3oaxc4q5k2d6q.cloudfront.net/m/cc9af2a5b5eb/img/marketing/bb_logo.png?07f1e2cdd031);background-size: contain;background-repeat: no-repeat;padding-right: 24px;"><a style="padding: 15px 100px 10px 10px !important;margin-top: 0px;background: none;
                 border: none;" href="https://bitbucket.org"></a></span><a href="https://bitbucket.org/'.$repo["owner"]["username"].'/'.strtolower($repo["name"]).'/get/'.$branch.'.zip">Download as zip</a></div></div>';
-        return $html;
+        
+		return $html;
     } else {
         return;
     }
