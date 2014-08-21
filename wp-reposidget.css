@@ -45,6 +45,37 @@
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAYCAMAAADAi10DAAAABlBMVEWioqL///8ciDJAAAAAAnRSTlP/AOW3MEoAAAAxSURBVBjTY2BkQAMYAnAJJAAXQgjjExrKGokBjIwYGqE0XrOwhD1cNcI0nEIwBggAALWWANXTTzTsAAAAAElFTkSuQmCC') 7px 7px no-repeat;
 }
 
+.reposidget-header-bitbucket {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  height: 36px;
+  background: #3b7fc4;
+  background: -webkit-gradient(linear, 0 0, 0 100%, to(#3b7fc4), from(#336ea9));
+  background: -webkit-linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  background: -moz-linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  background: -ms-linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  background: -o-linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  background: linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#336ea9', endColorstr='#3b7fc4')";
+  border: 1px solid #205081;
+  border-radius: 3px 3px 0 0;
+  padding: 0 10px 0 0;
+  overflow: visible;
+  text-overflow: ellipsis;
+}
+
+.reposidget-header-bitbucket h2 {
+  height: 36px;
+  line-height: 36px;
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0 0 0 32px;
+}
+
 .reposidget-header h2 strong {
   font-family: helvetica, arial, freesans, clean, sans-serif !important;
   font-weight: bold;
@@ -58,11 +89,27 @@
   box-shadow: inset 0 1px 1px #fff; 
 }
 
+.reposidget-content-bitbucket {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  padding: 10px 10px 8px 10px;
+  background: #205081;
+  border: 1px solid #205081;
+  box-shadow: inset 0 1px 1px #205081; 
+}
+
 .reposidget-content p {
   font-family: helvetica, arial, freesans, clean, sans-serif !important;
   margin: 0;
   font-size: 13px;
   line-height: 21px;
+}
+
+.reposidget-content-bitbucket p {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  margin: 0;
+  font-size: 13px;
+  line-height: 21px;
+  color: #FFFFFF;
 }
 
 .reposidget-content p.homepage {
@@ -96,11 +143,29 @@
   padding: 0 10px;
 }
 
+.reposidget-footer-bitbucket {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  height: 46px;
+  background: linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  border: 1px solid #205081;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  padding: 0 10px;
+}
+
 .reposidget-footer .social {
   font-family: helvetica, arial, freesans, clean, sans-serif !important;
   display: inline-block;
   height: 26px;
   margin: 10px 0 0 0;
+}
+
+.reposidget-footer-bitbucket .social {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  display: inline-block;
+  height: 26px;
+  margin: 10px 0 0 0;
+  color: #FFFFFF;
 }
 
 .reposidget-footer .social span {
@@ -156,6 +221,24 @@
   -webkit-user-select: none;
 }
 
+.reposidget-footer-bitbucket a {
+  font-family: helvetica, arial, freesans, clean, sans-serif !important;
+  float: right;
+  margin: 6px 0 0 0;
+  display: inline-block;
+  padding: 8px 15px;
+  line-height: 1.25;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #205081;
+  border-radius: 3px;
+  border: 1px solid #205081;
+  border-bottom-color: #205081;
+  box-shadow: rgba(0, 0, 0, 0.0976563) 0px 1px 3px;
+  -webkit-user-select: none;
+}
+
 .reposidget-footer a:hover {
   color: #337797;
   text-shadow: rgba(255, 255, 255, 0.898438) 0px 1px;
@@ -170,7 +253,36 @@
   border-bottom-color: #97c7dd;
 }
 
+.reposidget-footer-bitbucket a:hover {
+  color: #FFFFFF;
+  /*text-shadow: rgba(255, 255, 255, 0.898438) 0px 1px;*/
+/*background: #205081;*/
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f0f7fa), to(#d8eaf2));
+  background: linear-gradient(to bottom,#3b7fc4 0,#336ea9 100%);
+  background: -moz-linear-gradient(top, #205081, #d8eaf2);
+  background: -ms-linear-gradient(top, #205081, #d8eaf2);
+  background: -o-linear-gradient(top, #205081, #d8eaf2);
+  background: linear-gradient(top, #205081, #d8eaf2);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f7fa', endColorstr='#d8eaf2')";
+  border: 1px solid #cbe3ee;
+  border-bottom-color: #97c7dd;
+}
+
 .reposidget-footer a:active {
+  color: #fff;
+  text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#0770a0), to(#0ca6dd));
+  background: -webkit-linear-gradient(top, #0770a0, #0ca6dd);
+  background: -moz-linear-gradient(top, #0770a0, #0ca6dd);
+  background: -ms-linear-gradient(top, #0770a0, #0ca6dd);
+  background: -o-linear-gradient(top, #0770a0, #0ca6dd);
+  background: linear-gradient(top, #0770a0, #0ca6dd);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#0770a0', endColorstr='#0ca6dd')";
+  border: 1px solid #2a65a0;
+  border-bottom-color: #0770a0;
+}
+
+.reposidget-footer-bitbucket a:active {
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.296875) 0px -1px 0px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#0770a0), to(#0ca6dd));
