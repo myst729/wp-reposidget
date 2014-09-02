@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp-reposidget\n"
+"POT-Creation-Date: 2014-09-02 21:41+0800\n"
+"PO-Revision-Date: 2014-09-02 21:41+0800\n"
+"Last-Translator: Leo Deng <myst.dg@gmail.com>\n"
+"Language-Team: force:front <http://forcefront.com/>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: wp-reposidget.php:63
+msgid "This repository doesn't have description or homepage."
+msgstr "这个项目没有描述或主页。"
+
+#: wp-reposidget.php:69
+msgid "GitHub Reposidget for WordPress"
+msgstr "GitHub 项目挂件 WordPress 插件"
+
+#: wp-reposidget.php:85 wp-reposidget.php:101
+msgid "Add GitHub Reposidget"
+msgstr "添加 GitHub 项目挂件"
+
+#: wp-reposidget.php:86
+msgid "Please fill the owner and name of the repo:"
+msgstr "请填写要添加的项目的所有者和名称："
+
+#: wp-reposidget.php:87
+msgid "Repo Owner"
+msgstr "项目所有者"
+
+#: wp-reposidget.php:88
+msgid "Repo Name"
+msgstr "项目名称"
+
+#: wp-reposidget.php:89
+msgid "Add Repo"
+msgstr "添加项目"
+
+#: wp-reposidget.php:90
+msgid "Cancel"
+msgstr "取消"
+
+#: wp-reposidget.php:101
+msgid "GitHub Repo"
+msgstr "GitHub 项目"
+
+#~ msgid "Insert GitHub Reposidget"
+#~ msgstr "插入 GitHub 项目挂件"
+
+#~ msgid "Insert Repo"
+#~ msgstr "插入项目"
+
+#~ msgid "Path to the repo you want to insert:"
+#~ msgstr "将要引入的 GitHub 项目路径："

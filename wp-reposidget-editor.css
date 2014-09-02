@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('font/fontello.eot');
+  src: url('font/fontello.eot#iefix') format('embedded-opentype'),
+       url('font/fontello.woff') format('woff'),
+       url('font/fontello.ttf') format('truetype'),
+       url('font/fontello.svg#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+i.mce-i-reposidget {
+  font: 400 20px/1 fontello;
+  padding: 0;
+  vertical-align: top;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: -2px;
+  padding-right: 2px;
+}
+
+i.mce-i-reposidget:before {
+  content: '\e800';
+}
+
+#wp-reposidget-wrapper {
+	display: none;
+	background-color: #fff;
+	-webkit-box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+	box-shadow: 0 3px 6px rgba( 0, 0, 0, 0.3 );
+	width: 400px;
+	overflow: hidden;
+	margin-left: -200px;
+	margin-top: -125px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 100105;
+}
+
+#wp-reposidget-backdrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	min-height: 360px;
+	background: #000;
+	opacity: 0.7;
+	z-index: 100100;
+}
+
+#wp-reposidget-title {
+	background: #fcfcfc;
+	border-bottom: 1px solid #dfdfdf;
+	height: 36px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 36px;
+	padding: 0 36px 0 16px;
+}
+
+#wp-reposidget-close {
+	color: #666;
+	cursor: pointer;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+}
+
+#wp-reposidget-close:before {
+	font: normal 20px/36px 'dashicons';
+	vertical-align: top;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 36px;
+	height: 36px;
+	content: '\f158';
+}
+
+#wp-reposidget-close:hover,
+#wp-reposidget-close:focus {
+	color: #2ea2cc;
+}
+
+#wp-reposidget-info {
+	padding: 15px;
+}
+
+#wp-reposidget-info p {
+  margin: 5px 15px 15px;
+}
+
+#wp-reposidget-info input {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-top: 8px;
+	margin-bottom: 8px;
+  padding: 6px 10px;
+	width: 70%;
+}
+
+#wp-reposidget-info span {
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+	padding-right: 8px;
+	max-width: 24%;
+}
+
+#wp-reposidget-actions {
+	padding: 8px 16px;
+	background: #fcfcfc;
+	border-top: 1px solid #dfdfdf;
+  text-align: right;
+}

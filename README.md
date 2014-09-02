@@ -4,11 +4,11 @@ WP Reposidget (GitHub 项目挂件)
 Contributors: Leo Deng ([@米粽粽](http://weibo.com/myst729))  
 Plugin URI: http://forcefront.com/wp-reposidget-plugin/  
 Tags: github, reposidget  
-Requires at least: 2.7.0  
-Tested up to: 3.9.1  
-Stable tag: 1.0.3  
+Requires at least: 3.9.0  
+Tested up to: 3.9.2  
+Stable tag: 2.0.0  
 Author URI: http://forcefront.com/  
-Donate link: http://me.alipay.com/myst  
+Donate link: http://forcefront.com/macbook-pro-donation/  
 License: GPLv2 or later
 
 Insert GitHub repository widget into you posts/pages.
@@ -26,24 +26,26 @@ Insert [GitHub](https://github.com/) repository widget into you posts/pages.
 1. Upload the plugin to your `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Now you could see the `GitHub Repo` button in post/page editor.
-4. Input the path to your GitHub repo: `username/repo`.
+4. Click the button and input the owner and name of your GitHub repo.
 
-上传插件到您的 WordPress 插件目录，登录后台激活即可。进入文章编辑界面，您就会看到“GitHub Repo”的快捷按钮。输入您的项目路径：“用户名/项目”即可。
+上传插件到您的 WordPress 插件目录，登录后台激活即可。进入文章编辑界面，您就会看到“GitHub Repo”的快捷按钮。点击按钮后，输入您的项目所有者和名称即可插入短码。
 
 
 ###Frequently Asked Questions###
 
-Looking forward to your questions.
+1. Q: Does this plugin support BitBucket?  
+   A: No. It's not going to happen until BitBucket API system is actually usable (right now it's only shit).  
 
-期待您的提问。
+   问题：这个插件支持添加 BitBucket 项目吗？  
+   回答：不支持，除非 BitBucket API 系统达到实际可用的程度（目前就是一坨屎）。  
 
 
 ###Donation###
 
-If you like this plugin and want to thank its developer, you may consider make a donation via [**AliPay**](https://me.alipay.com/myst).
+If you like this plugin and want to thank its developer, you may consider [**donation**](http://forcefront.com/macbook-pro-donation/).
 
-如果您觉得这个插件还不错，想对开发者表示感谢，可以考虑通过 [**支付宝个人收款页**](https://me.alipay.com/myst) 打赏开发者一点儿银子。  
-[![I want a Macbook Pro!](https://img.alipay.com/sys/personalprod/style/mc/btn-index.png)](https://me.alipay.com/myst)
+如果您觉得这个插件还不错，想对开发者表示感谢，可以考虑[**打赏开发者一点儿银子**](http://forcefront.com/macbook-pro-donation/)。  
+[![I want a Macbook Pro!](http://forcefront.com/wp-content/uploads/2014/07/alipay.png)](http://forcefront.com/macbook-pro-donation/)
 
 
 ###Screenshots###
@@ -53,6 +55,10 @@ If you like this plugin and want to thank its developer, you may consider make a
 
 
 ###Changelog###
+
+= 2.0.0 (2014-09-02) =
+* Completely rewritten. Fix bugs and improve usability. Compatible with WordPress visual style.
+* 完全重写了代码。修复 bug，改善使用体验。兼容 WordPress 界面风格。
 
 = 1.0.3 (2014-05-10) =
 * Be compatible with GitHub API change.
