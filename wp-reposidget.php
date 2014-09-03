@@ -4,7 +4,7 @@
 Plugin Name: WP Reposidget (GitHub 项目挂件)
 Plugin URI: http://forcefront.com/wp-reposidget-plugin/
 Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
-Version: 2.0.0
+Version: 2.0.1
 Author: Leo Deng (@米粽粽)
 Author URI: http://forcefront.com/
 License: GPLv2 or later
@@ -42,33 +42,62 @@ function wp_reposidget_render($template, $pattern, $data) {
 }
 
 function wp_reposidget($atts) {
-  $url = "https://api.github.com/repos/" . $atts["owner"] . '/' . $atts["name"];
-  $repo = wp_reposidget_fetch($url);
+  if(array_key_exists("path", $atts)) {
+    $atts_path = explode("/", $atts["path"]);
+    $atts_owner = $atts_path[0];
+    $atts_name = $atts_path[1];
+  } else {
+    $atts_owner = $atts["owner"];
+    $atts_name = $atts["name"];
+  }
 
-  if(array_key_exists("message", $repo) || $repo["private"] == true) {
+  if($atts_owner == null || $atts_name == null) {
     return "";
   }
 
-  $description_empty = ($repo["description"] == "");
-  $homepage_empty = ($repo["homepage"] == "" || $repo["homepage"] == null);
+  $url = "https://api.github.com/repos/" . $atts_owner . '/' . $atts_name;
+  $repo = wp_reposidget_fetch($url);
+
+  if(array_key_exists("message", $repo) || array_key_exists("documentation_url", $repo) || $repo["private"] == true) {
+    $data = array(
+      "owner"              => $atts_owner,
+      "owner_url"          => "https://github.com/" . $atts_owner,
+      "name"               => $atts_name,
+      "html_url"           => "https://github.com/" . $atts_owner . "/" . $atts_name,
+      "default_branch"     => "-",
+      "description"        => __("This repository is not available anymore.", "repo"),
+      "toggle_description" => "",
+      "homepage"           => "https://github.com/" . $atts_owner . "/" . $atts_name,
+      "toggle_homepage"    => "hidden",
+      "stargazers_count"   => "-",
+      "forks_count"        => "-",
+      "toggle_download"    => "hidden",
+      "plugin_tip"         => __("GitHub Reposidget for WordPress", "repo"),
+      "plugin_url"         => WP_REPOSIDGET_HOMEPAGE
+    );
+  } else {
+    $description_empty = ($repo["description"] == "");
+    $homepage_empty = ($repo["homepage"] == "" || $repo["homepage"] == null);
+    $data = array(
+      "owner"              => $repo["owner"]["login"],
+      "owner_url"          => $repo["owner"]["html_url"],
+      "name"               => $repo["name"],
+      "html_url"           => $repo["html_url"],
+      "default_branch"     => $repo["default_branch"],
+      "description"        => ($description_empty && $homepage_empty) ? __("This repository doesn't have description or homepage.", "repo") : $repo["description"],
+      "toggle_description" => ($description_empty && !$homepage_empty) ? "hidden" : "",
+      "homepage"           => $homepage_empty ? $repo["html_url"] : $repo["homepage"],
+      "toggle_homepage"    => $homepage_empty ? "hidden" : "",
+      "stargazers_count"   => number_format($repo["stargazers_count"]),
+      "forks_count"        => number_format($repo["forks_count"]),
+      "toggle_download"    => "",
+      "plugin_tip"         => __("GitHub Reposidget for WordPress", "repo"),
+      "plugin_url"         => WP_REPOSIDGET_HOMEPAGE
+    );
+  }
 
   $template = plugin_dir_path( __FILE__ ) . "wp-reposidget.html";
   $pattern = '/{{([a-z_]+)}}/';
-  $data = array(
-    "owner"              => $repo["owner"]["login"],
-    "owner_url"          => $repo["owner"]["html_url"],
-    "name"               => $repo["name"],
-    "html_url"           => $repo["html_url"],
-    "default_branch"     => $repo["default_branch"],
-    "description"        => ($description_empty && $homepage_empty) ? __("This repository doesn't have description or homepage.", "repo") : $repo["description"],
-    "toggle_description" => ($description_empty && !$homepage_empty) ? "hidden" : "",
-    "homepage"           => $homepage_empty ? $repo["html_url"] : $repo["homepage"],
-    "toggle_homepage"    => $homepage_empty ? "hidden" : "",
-    "stargazers_count"   => number_format($repo["stargazers_count"]),
-    "forks_count"        => number_format($repo["forks_count"]),
-    "plugin_tip"         => __("GitHub Reposidget for WordPress", "repo"),
-    "plugin_url"         => WP_REPOSIDGET_HOMEPAGE
-  );
 
   return wp_reposidget_render($template, $pattern, $data);
 }

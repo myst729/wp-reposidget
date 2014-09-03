@@ -6,7 +6,7 @@ Plugin URI: http://forcefront.com/wp-reposidget-plugin/
 Tags: github, reposidget  
 Requires at least: 3.9.0  
 Tested up to: 3.9.2  
-Stable tag: 2.0.0  
+Stable tag: 2.0.1  
 Author URI: http://forcefront.com/  
 Donate link: http://forcefront.com/macbook-pro-donation/  
 License: GPLv2 or later
@@ -55,6 +55,10 @@ If you like this plugin and want to thank its developer, you may consider [**don
 
 
 ###Changelog###
+
+= 2.0.1 (2014-09-03) =
+* Back compatible with old shortcode syntax. Fix situation when repo info is wrong.
+* 兼容旧版短码格式。处理项目信息有误的情况。
 
 = 2.0.0 (2014-09-02) =
 * Completely rewritten. Fix bugs and improve usability. Compatible with WordPress visual style.
