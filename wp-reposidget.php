@@ -12,7 +12,7 @@ License: GPLv2 or later
 
 
 define(WP_REPOSIDGET_HOMEPAGE,  "http://forcefront.com/wp-reposidget-plugin/");
-define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/1.1.0 (WordPress 3.9.0+) Leo Deng/1.0");
+define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/2.0.1 (WordPress 3.9.0+) Leo Deng/1.0");
 
 function wp_reposidget_i18n() {
   load_plugin_textdomain("repo", false, plugin_basename(__DIR__) . "/langs/");
