@@ -39,6 +39,12 @@ Insert [GitHub](https://github.com/) repository widget into you posts/pages.
    问题：这个插件支持添加 BitBucket 项目吗？  
    回答：不支持，除非 BitBucket API 系统达到实际可用的程度（目前就是一坨屎）。  
 
+2. Q: After upgraded to version 2.x, I got a "Parse error: syntax error, unexpected T_FUNCTION...", what's that?  
+   A: Version 2.x requires PHP 5.3 and above. Please upgrade your PHP environment, or you can continue to use version 1.x.  
+
+   问题：升级到 2.x 以后报错，“Parse error: syntax error, unexpected T_FUNCTION...”，是什么原因？  
+   回答：2.x 要求 PHP 版本不低于 5.3。请升级您的 PHP 环境，或继续使用 1.x 版本。  
+
 
 ###Donation###
 
