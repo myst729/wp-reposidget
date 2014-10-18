@@ -1,5 +1,5 @@
 WP Reposidget (GitHub 项目挂件)
-=============================
+===============================
 
 Contributors: Leo Deng ([@米粽粽](http://weibo.com/myst729))  
 Plugin URI: http://forcefront.com/wp-reposidget-plugin/  
@@ -56,8 +56,11 @@ If you like this plugin and want to thank its developer, you may consider [**don
 
 ###Screenshots###
 
-1. Use shortcode to insert reposidget into the post/page. 使用简码向文章/页面中嵌入 GitHub 项目。
-2. The look of a reposidget. 嵌入文章的项目挂件。
+1. Use shortcode to insert reposidget into the post/page. 使用简码向文章/页面中嵌入 GitHub 项目。  
+![Insert Reposidget](https://raw.githubusercontent.com/myst729/wp-reposidget/master/screenshot-1.png)
+
+2. The look of a reposidget. 嵌入文章的项目挂件。  
+![Visual Style](https://raw.githubusercontent.com/myst729/wp-reposidget/master/screenshot-2.png)
 
 
 ###Changelog###
