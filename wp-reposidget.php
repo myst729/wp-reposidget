@@ -2,16 +2,16 @@
 
 /*
 Plugin Name: WP Reposidget (GitHub 项目挂件)
-Plugin URI: http://forcefront.com/wp-reposidget-plugin/
+Plugin URI: https://github.com/myst729/wp-reposidget
 Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
-Version: 2.0.1
+Version: 2.0.2
 Author: Leo Deng (@米粽粽)
-Author URI: http://forcefront.com/
+Author URI: http://myst729.github.io/
 License: GPLv2 or later
 */
 
 
-define(WP_REPOSIDGET_HOMEPAGE,  "http://forcefront.com/wp-reposidget-plugin/");
+define(WP_REPOSIDGET_HOMEPAGE,  "https://github.com/myst729/wp-reposidget");
 define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/2.0.1 (WordPress 3.9.0+) Leo Deng/1.0");
 
 function wp_reposidget_i18n() {
