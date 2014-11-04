@@ -1,8 +1,8 @@
 ## Changelog
 
 ### 2.0.2 (2014-11-04)
-* Update author's info.
-* 更新作者信息。
+* Update author's info and screenshot.
+* 更新作者信息和截图。
 
 ### 2.0.1 (2014-09-03)
 * Back compatible with old shortcode syntax. Fix situation when repo info is wrong.
