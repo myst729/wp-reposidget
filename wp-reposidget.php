@@ -4,7 +4,7 @@
 Plugin Name: WP Reposidget (GitHub 项目挂件)
 Plugin URI: https://github.com/myst729/wp-reposidget
 Description: Insert GitHub repository widget into you posts/pages. 在 WordPress 文章/页面中插入 GitHub 项目挂件。
-Version: 2.0.2
+Version: 2.1.0
 Author: Leo Deng (@米粽粽)
 Author URI: http://myst729.github.io/
 License: GPLv2 or later
@@ -12,7 +12,7 @@ License: GPLv2 or later
 
 
 define(WP_REPOSIDGET_HOMEPAGE,  "https://github.com/myst729/wp-reposidget");
-define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/2.0.1 (WordPress 3.9.0+) Leo Deng/1.0");
+define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/2.1.0 (WordPress 3.9.0+) Leo Deng/729");
 
 function wp_reposidget_i18n() {
   load_plugin_textdomain("repo", false, plugin_basename(__DIR__) . "/langs/");
@@ -23,13 +23,20 @@ function wp_reposidget_style() {
 }
 
 function wp_reposidget_fetch($url) {
+  $token = get_option('wp_reposidget_github_token');
   $ch = curl_init($url);
+
   curl_setopt($ch, CURLOPT_HEADER, false);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
   curl_setopt($ch, CURLOPT_USERAGENT, WP_REPOSIDGET_USERAGENT);
+  if($token) {
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: token ' . $token));
+  }
+
   $response = curl_exec($ch);
   curl_close($ch);
+
   return json_decode($response, true);
 }
 
@@ -156,9 +163,71 @@ function wp_reposidget_editor_init() {
   }
 }
 
+function wp_reposidget_options_link($links) {
+  $url = add_query_arg(array('page' => 'wp-reposidget-options'), admin_url('options-general.php'));
+  $settings_link = '<a href="' . esc_url($url) . '">' . __('Settings', 'repo').'</a>';
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+
+function wp_reposidget_options_menu() {
+  add_options_page(__('WP Reposidget', 'repo'), __('WP Reposidget', 'repo'), 'manage_options', 'wp-reposidget-options', 'wp_reposidget_options_page');
+}
+
+function wp_reposidget_register_settings() {
+  add_option('wp_reposidget_github_token', '');
+  register_setting('wp_reposidget_options_group', 'wp_reposidget_github_token');
+}
+
+function wp_reposidget_options_page() {
+?>
+  <div class="wrap">
+    <h2><?php _e('WP Reposidget options', 'repo') ?></h2>
+    <form method="post" action="options.php">
+      <?php settings_fields('wp_reposidget_options_group'); ?>
+      <div id="wp_reposidget_options_github_auth">
+        <h3><?php _e('Get authenticated to GitHub API (HIGHLY RECOMMENDED!)', 'repo') ?></h3>
+        <p class="description"><?php _e("According to GitHub API's policy, unauthenticated requests have a rate limit of <b>60</b> times per hour. For authenticated requests, the rate limit is <b>5,000</b> times per hour. If you find your reposidgets not working, it's possible that unauthenticated request quota is used up due to your site's page views.", 'repo') ?></p>
+        <table class="form-table">
+          <tr>
+            <th scope="row">
+              <label for="wp_reposidget_github_token"><?php _e('Personal Access Token', 'repo') ?></label>
+            </th>
+            <td>
+              <input type="password" name="wp_reposidget_github_token" id="wp_reposidget_github_token" class="regular-text" value="<?php echo get_option('wp_reposidget_github_token'); ?>">
+              <button type="button" id="wp_reposidget_github_token_toggler" class="button button-secondary hidden"><?php _e('Show Token', 'repo') ?></button>
+            </td>
+          </tr>
+        </table>
+        <script>
+          void function() {
+            var token = document.getElementById('wp_reposidget_github_token');
+            var button = document.getElementById('wp_reposidget_github_token_toggler');
+            var isHidden = true;
+            button.addEventListener('click', function(e) {
+              isHidden = !isHidden;
+              token.type = isHidden ? 'password' : 'text';
+              button.innerHTML = isHidden ? "<?php _e('Show Token', 'repo') ?>" : "<?php _e('Hide Token', 'repo') ?>";
+            }, false);
+            button.classList.remove('hidden');
+          }();
+        </script>
+      </div>
+      <?php submit_button(); ?>
+    </form>
+    <h3><?php _e('How do I get the personal access token?', 'repo') ?></h3>
+    <p><?php _e('Visit <strong><a href="https://github.com/settings/tokens/new" target="_blank">https://github.com/settings/tokens/new</a></strong>, make sure <strong>public_repo</strong> is checked (it is the only scope requested by WP Reposidget, you may uncheck others) and generate a token.', 'repo') ?></p>
+    <p><img src="<?php echo plugins_url("screenshot-3.png", __FILE__); ?>" alt="GitHub Personal Access Token" style="box-shadow:0 0 15px lightgray"></p>
+  </div>
+<?php
+}
+
 add_filter("plugins_loaded", "wp_reposidget_i18n");
 add_filter("wp_enqueue_scripts", "wp_reposidget_style");
 add_filter("admin_init", "wp_reposidget_editor_init");
+add_action('admin_init', 'wp_reposidget_register_settings');
+add_filter('admin_menu', 'wp_reposidget_options_menu');
+add_filter('plugin_action_links_' . plugin_basename(plugin_dir_path(__FILE__) . 'wp-reposidget.php'), 'wp_reposidget_options_link');
 add_shortcode("repo", "wp_reposidget");
 
 ?>

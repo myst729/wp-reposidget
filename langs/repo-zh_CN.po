@@ -1,59 +1,121 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: wp-reposidget\n"
-"POT-Creation-Date: 2014-11-03 20:33+0800\n"
-"PO-Revision-Date: 2014-11-03 20:33+0800\n"
+"POT-Creation-Date: 2014-11-23 18:54+0800\n"
+"PO-Revision-Date: 2014-11-23 18:54+0800\n"
 "Last-Translator: Leo Deng <myst.dg@gmail.com>\n"
 "Language-Team: myst729 <http://myst729.github.io/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: wp-reposidget.php:68
+#: wp-reposidget.php:75
 msgid "This repository is not available anymore."
-msgstr "这个项目不存在或已被移除。"
+msgstr "这个仓库不存在或已被移除。"
 
-#: wp-reposidget.php:75 wp-reposidget.php:94
+#: wp-reposidget.php:82 wp-reposidget.php:101
 msgid "GitHub Reposidget for WordPress"
-msgstr "GitHub 项目挂件 WordPress 插件"
+msgstr "GitHub 仓库挂件 WordPress 插件"
 
-#: wp-reposidget.php:87
+#: wp-reposidget.php:94
 msgid "This repository doesn't have description or homepage."
-msgstr "这个项目没有描述或主页。"
+msgstr "这个仓库没有描述或主页。"
 
-#: wp-reposidget.php:114 wp-reposidget.php:130
+#: wp-reposidget.php:121 wp-reposidget.php:137
 msgid "Add GitHub Reposidget"
-msgstr "添加 GitHub 项目挂件"
+msgstr "添加 GitHub 仓库挂件"
 
-#: wp-reposidget.php:115
+#: wp-reposidget.php:122
 msgid "Please fill the owner and name of the repo:"
-msgstr "请填写要添加的项目的所有者和名称："
+msgstr "请填写要添加的仓库的所有者和名称："
 
-#: wp-reposidget.php:116
+#: wp-reposidget.php:123
 msgid "Repo Owner"
-msgstr "项目所有者"
+msgstr "仓库所有者"
 
-#: wp-reposidget.php:117
+#: wp-reposidget.php:124
 msgid "Repo Name"
-msgstr "项目名称"
+msgstr "仓库名称"
 
-#: wp-reposidget.php:118
+#: wp-reposidget.php:125
 msgid "Add Repo"
-msgstr "添加项目"
+msgstr "添加仓库"
 
-#: wp-reposidget.php:119
+#: wp-reposidget.php:126
 msgid "Cancel"
 msgstr "取消"
 
-#: wp-reposidget.php:130
+#: wp-reposidget.php:137
 msgid "GitHub Repo"
-msgstr "GitHub 项目"
+msgstr "GitHub 仓库"
+
+#: wp-reposidget.php:168
+msgid "Settings"
+msgstr "设置"
+
+#: wp-reposidget.php:174
+msgid "WP Reposidget"
+msgstr "GitHub 仓库挂件"
+
+#: wp-reposidget.php:185
+msgid "WP Reposidget options"
+msgstr "GitHub 仓库挂件 WordPress 插件选项"
+
+#: wp-reposidget.php:189
+msgid "Get authenticated to GitHub API (HIGHLY RECOMMENDED!)"
+msgstr "获得 GitHub API 访问认证（强烈推荐！）"
+
+#: wp-reposidget.php:190
+msgid ""
+"According to GitHub API's policy, unauthenticated requests have a rate limit "
+"of <b>60</b> times per hour. For authenticated requests, the rate limit is "
+"<b>5,000</b> times per hour. If you find your reposidgets not working, it's "
+"possible that unauthenticated request quota is used up due to your site's "
+"page views."
+msgstr ""
+"根据 GitHub API 的使用条款，未认证请求的限额为每小时 <b>60</b> 次。获得认证后"
+"该限额将提升至每小时 <b>5000</b> 次。如果你发现自己的仓库挂件不能正常显示，很"
+"可能是因为站点访问量过大，用光了未认证请求的限额。"
+
+#: wp-reposidget.php:194
+msgid "Personal Access Token"
+msgstr "个人访问令牌"
+
+#: wp-reposidget.php:198 wp-reposidget.php:213
+msgid "Show Token"
+msgstr "显示令牌"
+
+#: wp-reposidget.php:210
+msgid "Hide Token"
+msgstr "隐藏令牌"
+
+#: wp-reposidget.php:223
+msgid "How do I get the personal access token?"
+msgstr "如何获取个人访问令牌？"
+
+#: wp-reposidget.php:224
+msgid ""
+"Visit <strong><a href=\"https://github.com/settings/tokens/new\" target="
+"\"_blank\">https://github.com/settings/tokens/new</a></strong>, make sure "
+"<strong>public_repo</strong> is checked (it is the only scope requested by "
+"WP Reposidget, you may uncheck others) and generate a token."
+msgstr ""
+"访问 <strong><a href=\"https://github.com/settings/tokens/new\" target="
+"\"_blank\">https://github.com/settings/tokens/new</a></strong>，确保选中了 "
+"<strong>public_repo</strong>（GitHub 仓库挂件只需要这个权限，你可以取消其他选"
+"项），生成令牌即可。"
+
+#~ msgid "GitHub Username"
+#~ msgstr "GitHub 用户名"
+
+#~ msgid "GitHub Password"
+#~ msgstr "GitHub 密码"
 
 #~ msgid "Insert GitHub Reposidget"
 #~ msgstr "插入 GitHub 项目挂件"
