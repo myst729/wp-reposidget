@@ -11,8 +11,8 @@ License: GPLv2 or later
 */
 
 
-define(WP_REPOSIDGET_HOMEPAGE,  "https://github.com/myst729/wp-reposidget");
-define(WP_REPOSIDGET_USERAGENT, "WP Reposidget/2.1.0 (WordPress 3.9.0+) Leo Deng/729");
+define('WP_REPOSIDGET_HOMEPAGE',  "https://github.com/myst729/wp-reposidget");
+define('WP_REPOSIDGET_USERAGENT', "WP Reposidget/2.1.0 (WordPress 3.9.0+) Leo Deng/729");
 
 function wp_reposidget_i18n() {
   load_plugin_textdomain("repo", false, plugin_basename(__DIR__) . "/langs/");
